@@ -1,0 +1,19 @@
+dig +short myip.opendns.com @resolver1.opendns.com
+and 2,3,4
+
+automation.whatismyip.com/n09230945.asp
+ip.alt.io
+cfaj.freeshell.org/ipaddr.cgi
+ ip.appspot.com (also has v6) (changes ip lots..)
+slurpware.org
+myip.dnsomatic.com
+ifconfig.me/ip
+ipecho.net/plain
+ipv4.icanhazip.com
+tnx.nl/ip (also has v6)
+
+
+checkip.dyndns.org
+dynamic.zoneedit.com/checkip.html
+ipogre.com/linux.php
+jsonip.com (not fw)
