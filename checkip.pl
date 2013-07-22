@@ -176,7 +176,7 @@ sub update_registrar {
     $ua->agent('curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.15 libssh2/1.2.6');
     $ua->cookie_jar( {} );
 
-    $request = POST 'https://www.1stdomains.net.nz/client/login.php',
+    $request = POST 'https://www.1stdomains.co.nz/client/login.php',
         [
             action           => 'login',
             account_login    => $login,
@@ -191,7 +191,7 @@ sub update_registrar {
     }
 
     $request = HTTP::Request->new(
-        GET => 'https://www.1stdomains.net.nz/client/domain_manager.php?domain_name=' . $domain,
+        GET => 'https://www.1stdomains.co.nz/client/domain_manager.php?domain_name=' . $domain,
     );
     $result = $ua->request($request);
 
@@ -200,7 +200,7 @@ sub update_registrar {
     }
 
     $request = HTTP::Request->new(
-        GET => 'https://www.1stdomains.net.nz/client/nameserver_delegation.php',
+        GET => 'https://www.1stdomains.co.nz/client/nameserver_delegation.php',
     );
     $result = $ua->request($request);
 
@@ -219,7 +219,7 @@ sub update_registrar {
     }
     $params{action} = 'update';
 
-    $request = POST 'https://www.1stdomains.net.nz/client/nameserver_delegation.php',
+    $request = POST 'https://www.1stdomains.co.nz/client/nameserver_delegation.php',
         \%params,
     ;
     $result = $ua->request($request);
