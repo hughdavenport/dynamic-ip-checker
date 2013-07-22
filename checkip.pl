@@ -12,17 +12,18 @@ my %urls = (
     'resolver2.opendns.com' => 'dns',
     'resolver3.opendns.com' => 'dns',
     'resolver4.opendns.com' => 'dns',
-    'automation.whatismyip.com/n09230945.asp' => 'http',
+#    'automation.whatismyip.com/n09230945.asp' => 'http',
     'ip.alt.io' => 'http',
-#    'cfaj.freeshell.org/ipaddr.cgi' => 'http',
-#    'ip.appspot.com' => 'http',
-    'slurpware.org' => 'http',
+    'cfaj.freeshell.org/ipaddr.cgi' => 'http',
+    'ip.appspot.com' => 'http',
+#    'slurpware.org' => 'http',
 #    'myip.dnsomatic.com' => 'http',
     'ifconfig.me/ip' => 'http',
     'ipecho.net/plain' => 'http',
     'ipv4.icanhazip.com' => 'http',
-    'tnx.nl/ip' => 'http',
+#    'tnx.nl/ip' => 'http',
     'curlmyip.com' => 'http',
+    'myip.dnsdynamic.org' => 'http',
 );
 
 my @domains = (
