@@ -4,6 +4,15 @@ use strict;
 use warnings;
 use autodie;
 
+use List::Util qw(shuffle);
+use Net::DNS;
+use HTTP::Request;
+use LWP::UserAgent;
+use DNS::ZoneParse;
+use HTTP::Request;
+use HTTP::Request::Common qw(POST);
+use HTML::TreeBuilder;
+
 my $num_to_get = 5;
 my $force = 0;
 
@@ -34,7 +43,6 @@ my @domains = (
 );
 
 sub findip {
-    use List::Util qw(shuffle);
 # TODO: parse ip for validity...
     my $ip = undef;
 
@@ -78,8 +86,6 @@ sub findip {
 }
 
 sub findip_dns {
-    use Net::DNS;
-
     my $nameserver = shift;
 
     my $res = Net::DNS::Resolver->new(
@@ -103,9 +109,6 @@ sub findip_dns {
 }
 
 sub findip_http {
-    use HTTP::Request;
-    use LWP::UserAgent;
-
     my $url = shift;
     if ($url !~ '^http:\/\/') {
         $url = 'http://' . $url;
@@ -129,8 +132,6 @@ sub findip_http {
 };
 
 sub update_zonefile {
-    use DNS::ZoneParse;
-
     my $domain = shift;
     my $ip = shift;
 
@@ -157,11 +158,6 @@ sub update_zonefile {
 }
 
 sub update_registrar {
-    use HTTP::Request;
-    use HTTP::Request::Common qw(POST);
-    use LWP::UserAgent;
-    use HTML::TreeBuilder;
-
     require '/etc/nsd3/credentials.inc';
     our ($login, $password);
 
